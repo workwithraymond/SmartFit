@@ -1,0 +1,96 @@
+﻿@model SmartFit.Web.Models.FitnessProfile
+
+<h2>Fitness Profile</h2>
+
+<p>Enter your information below so SmartFit can build your personalized fitness plan.</p>
+
+<form asp-action="Profile" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Weight" class="form-label"></label>
+        <input asp-for="Weight" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="HeightFeet" class="form-label">Height - Feet</label>
+        <input asp-for="HeightFeet" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="HeightInches" class="form-label">Height - Inches</label>
+        <input asp-for="HeightInches" class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Goal" class="form-label"></label>
+
+        <select asp-for="Goal" class="form-select">
+            <option value="">-- Select Goal --</option>
+            <option value="Build Muscle">Build Muscle</option>
+            <option value="Lose Fat">Lose Fat</option>
+            <option value="Maintain Weight">Maintain Weight</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TrainingDaysPerWeek" class="form-label"></label>
+
+        <select asp-for="TrainingDaysPerWeek" class="form-select">
+            <option value="">-- Select Training Days --</option>
+            <option value="3">3 Days</option>
+            <option value="4">4 Days</option>
+            <option value="5">5 Days</option>
+            <option value="6">6 Days</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ActivityLevel" class="form-label"></label>
+
+        <select asp-for="ActivityLevel" class="form-select">
+            <option value="">-- Select Activity Level --</option>
+            <option value="Sedentary">Sedentary</option>
+            <option value="Lightly Active">Lightly Active</option>
+            <option value="Moderately Active">Moderately Active</option>
+            <option value="Very Active">Very Active</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ExperienceLevel" class="form-label"></label>
+
+        <select asp-for="ExperienceLevel" class="form-select">
+            <option value="">-- Select Experience Level --</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="WorkoutLocation" class="form-label"></label>
+
+        <select asp-for="WorkoutLocation" class="form-select">
+            <option value="">-- Select Workout Location --</option>
+            <option value="Gym">Gym</option>
+            <option value="Home">Home</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Generate My Plan
+    </button>
+
+    
+</form>
