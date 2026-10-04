@@ -39,7 +39,7 @@ export default function ProfileScreen() {
     />
     <Text>Fitness Goal</Text>
     <View>
-  <Pressable onPress={() => setFitnessGoal('Lose Fat')}>
+  <Pressable style={styles.goalButton} onPress={() => setFitnessGoal('Lose Fat')}>
     <Text>Lose Fat</Text>
   </Pressable>
 
