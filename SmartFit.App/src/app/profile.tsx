@@ -1,7 +1,9 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { useState} from 'react';
 
 
 export default function ProfileScreen() {
+    const [ fitnessGoal, setFitnessGoal] = useState('');
     return (
 <View style={styles.container}>
     <Text style={styles.title}>Create Your Fitness Profile</Text>
@@ -36,6 +38,19 @@ export default function ProfileScreen() {
         keyboardType="numeric"
     />
     <Text>Fitness Goal</Text>
+    <View>
+  <Pressable onPress={() => setFitnessGoal('Lose Fat')}>
+    <Text>Lose Fat</Text>
+  </Pressable>
+<Text>Selected Goal: {fitnessGoal}</Text>
+  <Pressable onPress={() => setFitnessGoal('Build Muscle')}>
+    <Text>Build Muscle</Text>
+  </Pressable>
+
+  <Pressable onPress={() => setFitnessGoal('Maintain Weight')}>
+    <Text>Maintain Weight</Text>
+  </Pressable>
+</View>
    
 </View>
     );
