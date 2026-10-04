@@ -1,6 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>SmartFit</Text>
@@ -13,7 +15,7 @@ export default function HomeScreen() {
         Build your personalized workout plan.
       </Text>
     <Pressable style={styles.button}
-        onPress={() => alert('Welcome to SmartFit!')} >
+        onPress={() => router.push('/profile')} >
       <Text style={styles.buttonText}>Get Started</Text>
     </Pressable>  
     </View>
