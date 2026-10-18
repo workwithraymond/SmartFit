@@ -9,6 +9,7 @@ export default function ProfileScreen() {
     const [weight, setWeight] = useState('');
     const [heightFeet, setHeightFeet] = useState('');
     const [heightInches, setHeightInches] = useState('');
+    const [trainingDays, setTrainingDays] = useState('');
     return (
 <View style={styles.container}>
     <Text style={styles.title}>Create Your Fitness Profile</Text>
@@ -51,6 +52,14 @@ export default function ProfileScreen() {
         keyboardType="numeric"
         value={heightInches}
         onChangeText={setHeightInches}
+    />
+    <Text>Training Days Per Week</Text>
+    <TextInput
+        style={styles.input}
+        placeholder="Enter days (1-7)"
+        keyboardType="numeric"
+        value={trainingDays}
+        onChangeText={setTrainingDays}
     />
     <Text>Fitness Goal</Text>
     <View>
