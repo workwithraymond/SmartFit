@@ -13,6 +13,19 @@ export default function ProfileScreen() {
     const [experienceLevel, setExperienceLevel] = useState('');
     const [workoutLocation, setWorkoutLocation] = useState('');
     const [activityLevel, setActivityLevel] = useState('');
+    const fitnessProfile = {
+  name: name,
+  age: Number(age),
+  weight: weight,
+  heightFeet: heightFeet,
+  heightInches: heightInches,
+  trainingDays: trainingDays,
+  fitnessGoal: fitnessGoal,
+  experienceLevel: experienceLevel,
+  workoutLocation: workoutLocation,
+  activityLevel: activityLevel
+};
+console.log('SmartFit Profile:', fitnessProfile);
     return (
 <ScrollView style={styles.container}>
     <Text style={styles.title}>Create Your Fitness Profile</Text>
@@ -137,6 +150,12 @@ export default function ProfileScreen() {
   </Pressable>
 ))}
 <Text>Selected Activity: {activityLevel}</Text>
+<Pressable
+  style={styles.goalButton}
+  onPress={() => alert('Generating a fitness plan for ' + name + ', Age: ' + age + ', Weight: ' + weight + ' lbs')}
+>
+  <Text>Generate My Plan</Text>
+</Pressable>
 </View>
 </View>
    
