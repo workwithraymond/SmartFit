@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState} from 'react';
 
 
@@ -10,8 +10,10 @@ export default function ProfileScreen() {
     const [heightFeet, setHeightFeet] = useState('');
     const [heightInches, setHeightInches] = useState('');
     const [trainingDays, setTrainingDays] = useState('');
+    const [experienceLevel, setExperienceLevel] = useState('');
+    const [workoutLocation, setWorkoutLocation] = useState('');
     return (
-<View style={styles.container}>
+<ScrollView style={styles.container}>
     <Text style={styles.title}>Create Your Fitness Profile</Text>
     <Text>Name</Text>
     <TextInput style={styles.input} 
@@ -86,9 +88,39 @@ export default function ProfileScreen() {
     <Text>Maintain Weight</Text>
   </Pressable>
   <Text>Selected Goal: {fitnessGoal}</Text>
+  <Text>Experience Level</Text>
+  <View>
+  {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
+    <Pressable
+      key={level}
+      style={[
+        styles.goalButton,
+        experienceLevel === level && styles.selectedGoalButton
+      ]}
+      onPress={() => setExperienceLevel(level)}
+    >
+      <Text>{level}</Text>
+    </Pressable>
+  ))}
+  <Text>Selected Experience: {experienceLevel}</Text>
+  <Text>Workout Location</Text>
+  {['Gym', 'Home'].map((location) => (
+  <Pressable
+    key={location}
+    style={[
+      styles.goalButton,
+      workoutLocation === location && styles.selectedGoalButton
+    ]}
+    onPress={() => setWorkoutLocation(location)}
+  >
+    <Text>{location}</Text>
+  </Pressable>
+))}
+<Text>Selected Location: {workoutLocation}</Text>
+</View>
 </View>
    
-</View>
+</ScrollView>
     );
 }
 const styles = StyleSheet.create({
