@@ -12,6 +12,7 @@ export default function ProfileScreen() {
     const [trainingDays, setTrainingDays] = useState('');
     const [experienceLevel, setExperienceLevel] = useState('');
     const [workoutLocation, setWorkoutLocation] = useState('');
+    const [activityLevel, setActivityLevel] = useState('');
     return (
 <ScrollView style={styles.container}>
     <Text style={styles.title}>Create Your Fitness Profile</Text>
@@ -117,6 +118,25 @@ export default function ProfileScreen() {
   </Pressable>
 ))}
 <Text>Selected Location: {workoutLocation}</Text>
+<Text>Activity Level</Text>
+{[
+  'Sedentary',
+  'Lightly Active',
+  'Moderately Active',
+  'Very Active'
+].map((level) => (
+  <Pressable
+    key={level}
+    style={[
+      styles.goalButton,
+      activityLevel === level && styles.selectedGoalButton
+    ]}
+    onPress={() => setActivityLevel(level)}
+  >
+    <Text>{level}</Text>
+  </Pressable>
+))}
+<Text>Selected Activity: {activityLevel}</Text>
 </View>
 </View>
    
