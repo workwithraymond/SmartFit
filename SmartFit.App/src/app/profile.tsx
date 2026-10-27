@@ -16,16 +16,66 @@ export default function ProfileScreen() {
     const fitnessProfile = {
   name: name,
   age: Number(age),
-  weight: weight,
-  heightFeet: heightFeet,
-  heightInches: heightInches,
-  trainingDays: trainingDays,
+  weight: Number(weight),
+  heightFeet: Number(heightFeet),
+  heightInches: Number(heightInches),
+  trainingDays: Number(trainingDays),
   fitnessGoal: fitnessGoal,
   experienceLevel: experienceLevel,
   workoutLocation: workoutLocation,
   activityLevel: activityLevel
 };
 console.log('SmartFit Profile:', fitnessProfile);
+    const validateProfile = () => {
+  if (name.trim() === '') {
+    alert('Please enter your name.');
+    return false;
+  }
+    if (age.trim() === '' || Number(age) <= 0) {
+    alert('Please enter a valid age.');
+    return false;
+  }
+  if (
+  weight.trim() === '' ||
+  !Number.isFinite(Number(weight)) ||
+  Number(weight) <= 0
+) {
+  alert('Please enter a valid weight.');
+  return false;
+}
+if (
+  heightFeet.trim() === '' ||
+  !Number.isInteger(Number(heightFeet)) ||
+  Number(heightFeet) <= 0
+) {
+  alert('Please enter a valid height in feet.');
+  return false;
+}
+if (
+  heightInches.trim() === '' ||
+  !Number.isInteger(Number(heightInches)) ||
+  Number(heightInches) < 0 ||
+  Number(heightInches) > 11
+) {
+  alert('Please enter a valid height in inches (0-11).');
+  return false;
+}
+if (
+  trainingDays.trim() === '' ||
+  !Number.isInteger(Number(trainingDays)) ||
+  Number(trainingDays) < 1 ||
+  Number(trainingDays) > 7
+) {
+  alert('Please enter a number of training days between 1 and 7.');
+  return false;
+}
+if (fitnessGoal === '') {
+  alert('Please select your fitness goal.');
+  return false;
+}
+  return true;
+};
+    
     return (
 <ScrollView style={styles.container}>
     <Text style={styles.title}>Create Your Fitness Profile</Text>
