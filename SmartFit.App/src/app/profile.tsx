@@ -215,7 +215,11 @@ if (activityLevel === '') {
 <Text>Selected Activity: {activityLevel}</Text>
 <Pressable
   style={styles.goalButton}
-  onPress={() => alert('Generating a fitness plan for ' + name + ', Age: ' + age + ', Weight: ' + weight + ' lbs')}
+  onPress={() => {
+    if (!validateProfile()) return;
+
+    alert('Generating a fitness plan for ' + name + ', Age: ' + age + ', Weight: ' + weight + ' lbs');
+  }}
 >
   <Text>Generate My Plan</Text>
 </Pressable>
