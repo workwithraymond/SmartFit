@@ -3,6 +3,9 @@ import { useState} from 'react';
 
 
 export default function ProfileScreen() {
+  const [currentStep, setCurrentStep] = useState(1);
+
+
     const [ fitnessGoal, setFitnessGoal] = useState('');
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
@@ -92,12 +95,19 @@ if (activityLevel === '') {
     return (
 <ScrollView style={styles.container}>
     <Text style={styles.title}>Create Your Fitness Profile</Text>
-    <Text>Name</Text>
-    <TextInput style={styles.input} 
-    placeholder="Enter your name"
-    value={name}
-    onChangeText={setName}
-    /> 
+    <Text>Step {currentStep} of 10</Text>
+     {currentStep === 1 && (
+      <View>
+        <Text>Name</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your name"
+          value={name}
+          onChangeText={setName}
+        />
+      </View>
+    )}
+
 
     <Text>Age</Text>
     <TextInput
