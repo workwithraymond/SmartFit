@@ -73,6 +73,19 @@ if (fitnessGoal === '') {
   alert('Please select your fitness goal.');
   return false;
 }
+if (experienceLevel === '') {
+  alert('Please select your experience level.');
+  return false;
+}
+
+if (workoutLocation === '') {
+  alert('Please select your workout location.');
+  return false;
+}
+if (activityLevel === '') {
+  alert('Please select your activity level.');
+  return false;
+}
   return true;
 };
     
