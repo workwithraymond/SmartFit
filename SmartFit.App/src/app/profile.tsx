@@ -109,49 +109,66 @@ if (activityLevel === '') {
     )}
 
 
+ {currentStep === 2 && (
+  <View>
     <Text>Age</Text>
     <TextInput
-        style={styles.input}
-        placeholder="Enter your age"
-        keyboardType="numeric"
-        value={age}
-        onChangeText={setAge}
+      style={styles.input}
+      placeholder="Enter your age"
+      keyboardType="numeric"
+      value={age}
+      onChangeText={setAge}
     />
+  </View>
+)}
+   {currentStep === 3 && (
+  <View>
     <Text>Weight</Text>
     <TextInput
-        style={styles.input}
-        placeholder="Enter your weight in pounds"
-        keyboardType="numeric"
-        value={weight}
-        onChangeText={setWeight}
+      style={styles.input}
+      placeholder="Enter your weight in pounds"
+      keyboardType="numeric"
+      value={weight}
+      onChangeText={setWeight}
     />
+  </View>
+)}
+{currentStep === 4 && (
+  <View>
     <Text>Height - Feet</Text>
     <TextInput
-        style={styles.input}
-        placeholder="Feet"
-        keyboardType="numeric"
-        value={heightFeet}
-        onChangeText={setHeightFeet}
+      style={styles.input}
+      placeholder="Feet"
+      keyboardType="numeric"
+      value={heightFeet}
+      onChangeText={setHeightFeet}
     />
 
     <Text>Height - Inches</Text>
     <TextInput
-        style={styles.input}
-        placeholder="Inches"
-        keyboardType="numeric"
-        value={heightInches}
-        onChangeText={setHeightInches}
+      style={styles.input}
+      placeholder="Inches"
+      keyboardType="numeric"
+      value={heightInches}
+      onChangeText={setHeightInches}
     />
+  </View>
+)}
+   {currentStep === 5 && (
+  <View>
     <Text>Training Days Per Week</Text>
     <TextInput
-        style={styles.input}
-        placeholder="Enter days (1-7)"
-        keyboardType="numeric"
-        value={trainingDays}
-        onChangeText={setTrainingDays}
+      style={styles.input}
+      placeholder="Enter days (1-7)"
+      keyboardType="numeric"
+      value={trainingDays}
+      onChangeText={setTrainingDays}
     />
-    <Text>Fitness Goal</Text>
+  </View>
+)}
+{currentStep === 6 && (
     <View>
+    <Text>Fitness Goal</Text>
   <Pressable style={[styles.goalButton,
     fitnessGoal === 'Lose Fat' && styles.selectedGoalButton
   ]}
@@ -175,7 +192,9 @@ if (activityLevel === '') {
     <Text>Maintain Weight</Text>
   </Pressable>
   <Text>Selected Goal: {fitnessGoal}</Text>
-  <Text>Experience Level</Text>
+    </View>
+)}
+<Text>Experience Level</Text>
   <View>
   {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
     <Pressable
@@ -234,7 +253,7 @@ if (activityLevel === '') {
   <Text>Generate My Plan</Text>
 </Pressable>
 </View>
-</View>
+
    
 </ScrollView>
     );
