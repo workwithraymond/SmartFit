@@ -100,7 +100,7 @@ const generateWorkoutPlan = () => {
 
   
 if (days === 3) {
-  alert(
+  setGeneratedPlan(
     'Your 3-Day Workout Schedule:\n\n' +
     'Monday: Full Body Workout\n' +
     'Wednesday: Full Body Workout\n' +
@@ -111,7 +111,7 @@ return;
 }
 
    if (days === 4) {
-    alert(
+    setGeneratedPlan(
       'Your 4-Day Workout Schedule:\n\n' +
       'Monday: Upper Body\n' +
       'Tuesday: Lower Body\n' +
@@ -123,14 +123,94 @@ return;
   
 if (days === 5) {
   
+const location = fitnessProfile.workoutLocation;
+
+if (location === 'Home' && fitnessProfile.fitnessGoal === 'Build Muscle') {
+  setGeneratedPlan(
+    'Your 5-Day Home Muscle Building Plan:\n\n' +
+    
+'Monday: Upper Body\n' +
+'• Push-Ups: 3 sets x 10 reps\n' +
+'• Pike Push-Ups: 3 sets x 8 reps\n' +
+'• Resistance Band Rows: 3 sets x 12 reps\n' +
+'• Chair-Supported Triceps Extensions: 3 sets x 10 reps\n\n' +
+
+    
+'Tuesday: Lower Body\n' +
+'• Bodyweight Squats: 3 sets x 15 reps\n' +
+'• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Standing Calf Raises: 3 sets x 20 reps\n\n' +
+
+    
+'Wednesday: Core and Mobility\n' +
+'• Plank: 3 sets x 30 seconds\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Hip Flexor Stretch: 2 sets x 30 seconds per side\n\n' +
+
+    
+'Thursday: Upper Body\n' +
+'• Incline Push-Ups: 3 sets x 12 reps\n' +
+'• Resistance Band Rows: 3 sets x 12 reps\n' +
+'• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+'• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+
+    
+'Friday: Lower Body\n' +
+'• Bulgarian Split Squats: 3 sets x 10 reps per leg\n' +
+'• Single-Leg Glute Bridges: 3 sets x 12 reps per leg\n' +
+'• Bodyweight Good Mornings: 3 sets x 15 reps\n' +
+'• Wall Sit: 3 sets x 30 seconds\n' +
+'• Single-Leg Calf Raises: 3 sets x 12 reps per leg\n\n' +
+
+    'Saturday: Rest\n' +
+    'Sunday: Rest'
+  );
+  return;
+}
+
+
 if (fitnessProfile.fitnessGoal === 'Build Muscle') {
   setGeneratedPlan(
     'Your 5-Day Muscle Building Plan:\n\n' +
-    'Monday: Chest, Shoulders, Triceps\n' +
-    'Tuesday: Legs\n' +
-    'Wednesday: Back and Biceps\n' +
-    'Thursday: Upper Body\n' +
-    'Friday: Lower Body\n' +
+    
+'Monday: Chest, Shoulders, Triceps\n' +
+'• Bench Press: 3 sets x 10 reps\n' +
+'• Shoulder Press: 3 sets x 10 reps\n' +
+'• Triceps Pushdowns: 3 sets x 12 reps\n\n' +
+
+    
+'Tuesday: Legs\n' +
+'• Squats: 3 sets x 10 reps\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Leg Curls: 3 sets x 12 reps\n' +
+'• Calf Raises: 3 sets x 15 reps\n\n' +
+
+    
+'Wednesday: Back and Biceps\n' +
+'• Lat Pulldowns: 3 sets x 10 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 12 reps\n' +
+'• Hammer Curls: 3 sets x 12 reps\n\n' +
+
+    
+'Thursday: Upper Body\n' +
+'• Incline Dumbbell Press: 3 sets x 10 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Lateral Raises: 3 sets x 12 reps\n' +
+'• Triceps Pushdowns: 3 sets x 12 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 12 reps\n\n' +
+
+    
+'Friday: Lower Body\n' +
+'• Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Bulgarian Split Squats: 3 sets x 10 reps per leg\n' +
+'• Leg Extensions: 3 sets x 12 reps\n' +
+'• Seated Leg Curls: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
     'Saturday: Rest\n' +
     'Sunday: Rest'
   );
@@ -138,7 +218,7 @@ if (fitnessProfile.fitnessGoal === 'Build Muscle') {
 }
 
 if (fitnessProfile.fitnessGoal === 'Lose Fat') {
-  alert(
+  setGeneratedPlan(
     'Your 5-Day Fat Loss Plan:\n\n' +
     'Monday: Full Body Strength\n' +
     'Tuesday: Cardio and Core\n' +
@@ -152,7 +232,7 @@ if (fitnessProfile.fitnessGoal === 'Lose Fat') {
 }
 
 if (fitnessProfile.fitnessGoal === 'Maintain Weight') {
-  alert(
+  setGeneratedPlan(
     'Your 5-Day Maintenance Plan:\n\n' +
     'Monday: Upper Body Strength\n' +
     'Tuesday: Lower Body Strength\n' +
@@ -522,8 +602,43 @@ onPress={() => {
 )}
 
 {generatedPlan !== '' && (
-  <View style={{ marginTop: 24 }}>
-    <Text style={styles.questionLabel}>Your SmartFit Workout Plan</Text>
+  
+<View
+  style={{
+    marginTop: 24,
+    backgroundColor: '#EFF6FF',
+    padding: 20,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#BFDBFE',
+  }}
+>
+ 
+<Text style={styles.questionLabel}>
+  {name}'s SmartFit Workout Plan
+</Text>
+
+<Text style={{ fontSize: 16, color: '#475569', marginBottom: 12 }}>
+  Fitness Goal: {fitnessGoal}
+</Text>
+
+<Text style={{ fontSize: 16, color: '#475569', marginBottom: 12 }}>
+  Experience Level: {experienceLevel}
+</Text>
+
+<Text style={{ fontSize: 16, color: '#475569', marginBottom: 12 }}>
+  Workout Location: {workoutLocation}
+</Text>
+
+<Text style={{ fontSize: 16, color: '#475569', marginBottom: 12 }}>
+  Training Days Per Week: {trainingDays}
+</Text>
+
+<Text style={{ fontSize: 16, color: '#475569', marginBottom: 12 }}>
+  Activity Level: {activityLevel}
+</Text>
+
+
     <Text style={{ fontSize: 16, lineHeight: 28, color: '#1E293B' }}>
       {generatedPlan}
     </Text>
