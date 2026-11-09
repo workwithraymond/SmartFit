@@ -97,6 +97,58 @@ if (activityLevel === '') {
 const generateWorkoutPlan = () => {
   
   const days = fitnessProfile.trainingDays;
+  
+const experience = fitnessProfile.experienceLevel;
+
+
+const goal = fitnessProfile.fitnessGoal;
+
+
+if (days === 1) {
+  setGeneratedPlan(
+    'Your 1-Day Full Body Workout Plan:\n\n' +
+    'Monday: Full Body Workout\n' +
+    '• Bodyweight Squats: 2 sets x 12 reps\n' +
+    '• Glute Bridges: 2 sets x 12 reps\n' +
+    '• Standing Calf Raises: 2 sets x 15 reps\n' +
+    '• Dead Bugs: 2 sets x 10 reps per side\n\n' +
+    'Tuesday - Sunday: Rest or optional light activity'
+  );
+  return;
+}
+
+if (days === 2) {
+  setGeneratedPlan(
+    'Your 2-Day Full Body Workout Plan:\n\n' +
+    'Monday: Full Body Workout A\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Dead Bugs: 2 sets x 10 reps per side\n\n' +
+    'Thursday: Full Body Workout B\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Bird Dogs: 2 sets x 10 reps per side\n\n' +
+    'Other Days: Rest or optional light activity'
+  );
+  return;
+}
+
+
+if (days === 6) {
+  setGeneratedPlan(
+    'Your 6-Day Fitness Plan:\n\n' +
+    'Monday: Upper Body Strength\n' +
+    'Tuesday: Lower Body Strength\n' +
+    'Wednesday: Cardio and Core\n' +
+    'Thursday: Upper Body Strength\n' +
+    'Friday: Lower Body Strength\n' +
+    'Saturday: Light Cardio and Mobility\n' +
+    'Sunday: Rest'
+  );
+  return;
+}
 
   
 if (days === 3) {
@@ -122,12 +174,118 @@ return;
   }
   
 if (days === 5) {
+
+  
+if (
+  experience === 'Beginner' &&
+  fitnessProfile.fitnessGoal === 'Build Muscle' &&
+  fitnessProfile.workoutLocation === 'Gym'
+) {
+  setGeneratedPlan(
+    
+'Your Beginner Gym Muscle Building Plan:\n' +
+'5 Active Days: 3 Strength Workouts + 2 Light Recovery Days\n\n' +
+
+    
+'Monday: Full Body Workout\n' +
+'• Leg Press: 2 sets x 12 reps\n' +
+'• Lat Pulldowns: 2 sets x 12 reps\n' +
+'• Seated Leg Curls: 2 sets x 12 reps\n' +
+'• Seated Cable Rows: 2 sets x 12 reps\n' +
+'• Standing Calf Raises: 2 sets x 15 reps\n\n' +
+
+    'Tuesday: Rest or Light Walking\n' +
+    
+'Wednesday: Full Body Workout\n' +
+'• Goblet Squats: 2 sets x 10 reps\n' +
+'• Machine Chest Press: 2 sets x 12 reps\n' +
+'• Seated Cable Rows: 2 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 2 sets x 10 reps\n' +
+'• Plank: 2 sets x 20 seconds\n\n' +
+
+    'Thursday: Rest or Light Walking\n' +
+    
+'Friday: Full Body Workout\n' +
+'• Leg Press: 2 sets x 12 reps\n' +
+'• Machine Chest Press: 2 sets x 12 reps\n' +
+'• Lat Pulldowns: 2 sets x 12 reps\n' +
+'• Seated Leg Curls: 2 sets x 12 reps\n' +
+'• Dead Bugs: 2 sets x 10 reps per side\n\n' +
+
+    'Saturday: Rest\n' +
+    'Sunday: Rest'
+  );
+  return;
+}
+
   
 const location = fitnessProfile.workoutLocation;
+
+if (
+  experience === 'Advanced' &&
+  fitnessProfile.fitnessGoal === 'Build Muscle' &&
+  fitnessProfile.workoutLocation === 'Gym'
+) {
+  setGeneratedPlan(
+    'Your Advanced Gym Muscle Building Plan:\n\n' +
+    
+'Monday: Push Workout\n' +
+'• Barbell Bench Press: 4 sets x 6-8 reps\n' +
+'• Incline Dumbbell Press: 3 sets x 8-10 reps\n' +
+'• Seated Dumbbell Shoulder Press: 3 sets x 8-10 reps\n' +
+'• Dumbbell Lateral Raises: 3 sets x 12-15 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 10-12 reps\n' +
+'• Overhead Triceps Extensions: 3 sets x 10-12 reps\n\n' +
+
+    
+'Tuesday: Pull Workout\n' +
+'• Pull-Ups: 4 sets x 6-10 reps\n' +
+'• Barbell Rows: 4 sets x 8-10 reps\n' +
+'• Lat Pulldowns: 3 sets x 10-12 reps\n' +
+'• Seated Cable Rows: 3 sets x 10-12 reps\n' +
+'• Face Pulls: 3 sets x 12-15 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 10-12 reps\n' +
+'• Hammer Curls: 3 sets x 10-12 reps\n\n' +
+
+    
+'Wednesday: Legs Workout\n' +
+'• Barbell Squats: 4 sets x 6-8 reps\n' +
+'• Romanian Deadlifts: 3 sets x 8-10 reps\n' +
+'• Leg Press: 3 sets x 10-12 reps\n' +
+'• Seated Leg Curls: 3 sets x 10-12 reps\n' +
+'• Leg Extensions: 3 sets x 12-15 reps\n' +
+'• Standing Calf Raises: 4 sets x 12-15 reps\n\n' +
+
+    
+'Thursday: Upper Body Workout\n' +
+'• Incline Dumbbell Press: 3 sets x 8-10 reps\n' +
+'• Chest-Supported Rows: 3 sets x 8-10 reps\n' +
+'• Machine Chest Press: 3 sets x 10-12 reps\n' +
+'• Neutral-Grip Lat Pulldowns: 3 sets x 10-12 reps\n' +
+'• Dumbbell Lateral Raises: 3 sets x 12-15 reps\n' +
+'• Cable Biceps Curls: 3 sets x 10-12 reps\n' +
+'• Rope Triceps Pushdowns: 3 sets x 10-12 reps\n\n' +
+
+    
+'Friday: Lower Body Workout\n' +
+'• Hack Squats: 3 sets x 8-10 reps\n' +
+'• Barbell Hip Thrusts: 3 sets x 8-12 reps\n' +
+'• Bulgarian Split Squats: 3 sets x 10 reps per leg\n' +
+'• Lying Leg Curls: 3 sets x 10-12 reps\n' +
+'• Leg Extensions: 3 sets x 12-15 reps\n' +
+'• Seated Calf Raises: 4 sets x 12-15 reps\n\n' +
+
+    'Saturday: Rest\n' +
+    'Sunday: Rest'
+  );
+  return;
+}
 
 if (location === 'Home' && fitnessProfile.fitnessGoal === 'Build Muscle') {
   setGeneratedPlan(
     'Your 5-Day Home Muscle Building Plan:\n\n' +
+
+    
     
 'Monday: Upper Body\n' +
 '• Push-Ups: 3 sets x 10 reps\n' +
@@ -369,7 +527,11 @@ if (fitnessProfile.fitnessGoal === 'Maintain Weight') {
    {currentStep === 5 && (
   <View>
     
-<Text style={styles.questionLabel}>Training Days Per Week</Text>
+
+<Text style={styles.questionLabel}>
+  How many days per week would you like to be physically active?
+</Text>
+
 
     <TextInput
       style={styles.input}
@@ -378,6 +540,14 @@ if (fitnessProfile.fitnessGoal === 'Maintain Weight') {
       value={trainingDays}
       onChangeText={setTrainingDays}
     />
+    
+
+<Text>
+  Active days can include strength training, cardio, walking, or
+  light recovery activities. You do not need to lift weights every day.
+</Text>
+
+
   </View>
 )}
 {currentStep === 6 && (
