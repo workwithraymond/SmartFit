@@ -96,12 +96,16 @@ if (activityLevel === '') {
 
 const generateWorkoutPlan = () => {
   
-  const days = fitnessProfile.trainingDays;
+const days = fitnessProfile.trainingDays;
   
 const experience = fitnessProfile.experienceLevel;
 
 
 const goal = fitnessProfile.fitnessGoal;
+
+
+const location = fitnessProfile.workoutLocation;
+
 
 if (days === 1 && goal === 'Lose Fat') {
     setGeneratedPlan(
@@ -130,6 +134,32 @@ if (days === 1 && goal === 'Build Muscle') {
   return;
 }
 
+
+if (days === 1 && goal === 'Lose Fat' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 1-Day Home Fat Loss Plan:\n\n' +
+    'Monday: Full Body Home Workout\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n' +
+    '• Brisk Walking: 20 minutes'
+  );
+  return;
+}
+
+if (days === 1 && goal === 'Build Muscle' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 1-Day Home Muscle Building Plan:\n\n' +
+    'Monday: Full Body Muscle Building\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps'
+  );
+  return;
+}
 
 if (days === 1) {
   setGeneratedPlan(
@@ -204,6 +234,175 @@ if (days === 2) {
 }
 
 
+if (days === 6 && goal === 'Lose Fat') {
+  setGeneratedPlan(
+    'Your 6-Day Fat Loss Plan:\n\n' +
+   
+'Monday: Full Body Strength\n' +
+'• Bodyweight Squats: 3 sets x 12 reps\n' +
+'• Resistance Band Rows: 3 sets x 12 reps\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n' +
+'• Brisk Walking: 20 minutes\n\n' +
+
+    
+'Tuesday: Cardio and Core\n' +
+'• Brisk Walking or Marching in Place: 25 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Standing Knee Raises: 3 sets x 12 reps per side\n\n' +
+
+    
+'Wednesday: Upper Body Strength\n' +
+'• Resistance Band Chest Press: 3 sets x 12 reps\n' +
+'• Resistance Band Rows: 3 sets x 12 reps\n' +
+'• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+'• Resistance Band Triceps Extensions: 3 sets x 12 reps\n' +
+'• Wall Push-Ups: 2 sets x 10 reps\n\n' +
+
+   
+'Thursday: Walking and Mobility\n' +
+'• Brisk Walking or Marching in Place: 30 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
+
+   
+'Friday: Lower Body Strength\n' +
+'• Bodyweight Squats: 3 sets x 15 reps\n' +
+'• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Bodyweight Good Mornings: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 20 reps\n\n' +
+
+    
+'Saturday: Light Cardio and Core\n' +
+'• Easy Walking: 20 minutes\n' +
+'• Dead Bugs: 2 sets x 10 reps per side\n' +
+'• Bird Dogs: 2 sets x 10 reps per side\n' +
+'• Standing Knee Raises: 2 sets x 12 reps per side\n' +
+'• Gentle Full Body Stretching: 10 minutes\n\n' +
+
+    'Sunday: Rest'
+  );
+  return;
+}
+
+if (days === 6 && goal === 'Build Muscle') {
+  setGeneratedPlan(
+    'Your 6-Day Muscle Building Plan:\n\n' +
+    
+'Monday: Push Workout - Chest, Shoulders, Triceps\n' +
+'• Barbell Bench Press: 3 sets x 8-10 reps\n' +
+'• Incline Dumbbell Press: 3 sets x 10-12 reps\n' +
+'• Seated Dumbbell Shoulder Press: 3 sets x 10 reps\n' +
+'• Dumbbell Lateral Raises: 3 sets x 12-15 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 12 reps\n\n' +
+
+    
+'Tuesday: Pull Workout - Back and Biceps\n' +
+'• Lat Pulldowns: 3 sets x 10-12 reps\n' +
+'• Seated Cable Rows: 3 sets x 10-12 reps\n' +
+'• Chest-Supported Dumbbell Rows: 3 sets x 10 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 12 reps\n' +
+'• Hammer Curls: 3 sets x 12 reps\n\n' +
+
+   
+'Wednesday: Legs Workout\n' +
+'• Leg Press: 3 sets x 10-12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Seated Leg Curls: 3 sets x 12 reps\n' +
+'• Leg Extensions: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+   
+'Thursday: Push Workout - Chest, Shoulders, Triceps\n' +
+'• Machine Chest Press: 3 sets x 10-12 reps\n' +
+'• Incline Dumbbell Press: 3 sets x 10 reps\n' +
+'• Dumbbell Lateral Raises: 3 sets x 12-15 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 12 reps\n' +
+'• Dumbbell Triceps Kickbacks: 3 sets x 12 reps\n\n' +
+
+   
+'Friday: Pull Workout - Back and Biceps\n' +
+'• Assisted Pull-Ups: 3 sets x 8-10 reps\n' +
+'• Chest-Supported Machine Rows: 3 sets x 10-12 reps\n' +
+'• Straight-Arm Cable Pulldowns: 3 sets x 12 reps\n' +
+'• EZ-Bar Biceps Curls: 3 sets x 10-12 reps\n' +
+'• Incline Dumbbell Curls: 3 sets x 12 reps\n\n' +
+
+    
+'Saturday: Legs Workout\n' +
+'• Goblet Squats: 3 sets x 10-12 reps\n' +
+'• Dumbbell Walking Lunges: 3 sets x 10 reps per leg\n' +
+'• Lying Leg Curls: 3 sets x 12 reps\n' +
+'• Hip Thrusts: 3 sets x 12 reps\n' +
+'• Seated Calf Raises: 3 sets x 15 reps\n\n' +
+
+    'Sunday: Rest'
+  );
+  return;
+}
+
+
+if (days === 6 && goal === 'Maintain Weight') {
+  setGeneratedPlan(
+    'Your 6-Day Maintenance Plan:\n\n' +
+    
+'Monday: Full Body Strength\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Machine Chest Press: 3 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+    
+'Tuesday: Cardio and Core\n' +
+'• Treadmill Brisk Walking: 25 minutes\n' +
+'• Stationary Bicycle: 15 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Standing Knee Raises: 3 sets x 12 reps per side\n\n' +
+
+   
+'Wednesday: Upper Body Strength\n' +
+'• Lat Pulldowns: 3 sets x 12 reps\n' +
+'• Machine Chest Press: 3 sets x 12 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 12 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 12 reps\n\n' +
+
+   
+'Thursday: Walking and Mobility\n' +
+'• Treadmill Brisk Walking: 30 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Standing Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
+
+    
+'Friday: Lower Body Strength\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Seated Leg Curls: 3 sets x 12 reps\n' +
+'• Leg Extensions: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+    
+'Saturday: Light Cardio and Core\n' +
+'• Stationary Bicycle: 20 minutes\n' +
+'• Treadmill Easy Walking: 15 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Gentle Full Body Stretching: 10 minutes\n\n' +
+
+    'Sunday: Rest'
+  );
+  return;
+}
+
 if (days === 6) {
   setGeneratedPlan(
     'Your 6-Day Fitness Plan:\n\n' +
@@ -214,6 +413,195 @@ if (days === 6) {
     'Friday: Lower Body Strength\n' +
     'Saturday: Light Cardio and Mobility\n' +
     'Sunday: Rest'
+  );
+  return;
+}
+
+if (days === 7 && goal === 'Lose Fat') {
+  setGeneratedPlan(
+    'Your 7-Day Fat Loss Plan:\n\n' +
+   
+'Monday: Full Body Strength\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Machine Chest Press: 3 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Treadmill Brisk Walking: 20 minutes\n\n' +
+
+    
+'Tuesday: Cardio and Core\n' +
+'• Treadmill Brisk Walking: 25 minutes\n' +
+'• Stationary Bicycle: 15 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Standing Knee Raises: 3 sets x 12 reps per side\n\n' +
+
+   
+'Wednesday: Upper Body Strength\n' +
+'• Lat Pulldowns: 3 sets x 12 reps\n' +
+'• Machine Chest Press: 3 sets x 12 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 12 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 12 reps\n\n' +
+
+   
+'Thursday: Walking and Mobility\n' +
+'• Treadmill Brisk Walking: 30 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Standing Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
+
+   
+'Friday: Lower Body Strength\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Seated Leg Curls: 3 sets x 12 reps\n' +
+'• Leg Extensions: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+   
+'Saturday: Cardio and Core\n' +
+'• Stationary Bicycle: 20 minutes\n' +
+'• Treadmill Brisk Walking: 20 minutes\n' +
+'• Dead Bugs: 3 sets x 12 reps per side\n' +
+'• Bird Dogs: 3 sets x 12 reps per side\n' +
+'• Standing Knee Raises: 3 sets x 15 reps per side\n\n' +
+
+    
+'Sunday: Active Recovery and Stretching\n' +
+'• Easy Walking: 20 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Standing Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n' +
+'• Deep Breathing and Relaxation: 5 minutes'
+
+  );
+  return;
+}
+
+if (days === 7 && goal === 'Build Muscle') {
+  setGeneratedPlan(
+    'Your 7-Day Muscle Building Plan:\n\n' +
+   
+'Monday: Push Workout - Chest, Shoulders, Triceps\n' +
+'• Barbell Bench Press: 3 sets x 8-10 reps\n' +
+'• Incline Dumbbell Press: 3 sets x 10-12 reps\n' +
+'• Seated Dumbbell Shoulder Press: 3 sets x 10 reps\n' +
+'• Dumbbell Lateral Raises: 3 sets x 12-15 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 12 reps\n\n' +
+
+    
+'Tuesday: Pull Workout - Back and Biceps\n' +
+'• Lat Pulldowns: 3 sets x 10-12 reps\n' +
+'• Seated Cable Rows: 3 sets x 10-12 reps\n' +
+'• Chest-Supported Dumbbell Rows: 3 sets x 10 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 12 reps\n' +
+'• Hammer Curls: 3 sets x 12 reps\n\n' +
+
+   
+'Wednesday: Legs Workout\n' +
+'• Leg Press: 3 sets x 10-12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Seated Leg Curls: 3 sets x 12 reps\n' +
+'• Leg Extensions: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+    
+'Thursday: Push Workout - Chest, Shoulders, Triceps\n' +
+'• Machine Chest Press: 3 sets x 10-12 reps\n' +
+'• Incline Dumbbell Press: 3 sets x 10 reps\n' +
+'• Dumbbell Lateral Raises: 3 sets x 12-15 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 12 reps\n' +
+'• Dumbbell Triceps Kickbacks: 3 sets x 12 reps\n\n' +
+
+    
+'Friday: Pull Workout - Back and Biceps\n' +
+'• Assisted Pull-Ups: 3 sets x 8-10 reps\n' +
+'• Chest-Supported Machine Rows: 3 sets x 10-12 reps\n' +
+'• Straight-Arm Cable Pulldowns: 3 sets x 12 reps\n' +
+'• EZ-Bar Biceps Curls: 3 sets x 10-12 reps\n' +
+'• Incline Dumbbell Curls: 3 sets x 12 reps\n\n' +
+
+   
+'Saturday: Legs Workout\n' +
+'• Goblet Squats: 3 sets x 10-12 reps\n' +
+'• Dumbbell Walking Lunges: 3 sets x 10 reps per leg\n' +
+'• Lying Leg Curls: 3 sets x 12 reps\n' +
+'• Hip Thrusts: 3 sets x 12 reps\n' +
+'• Seated Calf Raises: 3 sets x 15 reps\n\n' +
+
+    
+'Sunday: Active Recovery and Mobility\n' +
+'• Easy Walking: 20 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Standing Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n' +
+'• Deep Breathing and Relaxation: 5 minutes'
+
+  );
+  return;
+}
+
+if (days === 7 && goal === 'Maintain Weight') {
+  setGeneratedPlan(
+    'Your 7-Day Maintenance Plan:\n\n' +
+    
+'Monday: Full Body Strength\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Machine Chest Press: 3 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+  
+'Tuesday: Cardio and Core\n' +
+'• Treadmill Brisk Walking: 25 minutes\n' +
+'• Stationary Bicycle: 15 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Standing Knee Raises: 3 sets x 12 reps per side\n\n' +
+
+   
+'Wednesday: Upper Body Strength\n' +
+'• Lat Pulldowns: 3 sets x 12 reps\n' +
+'• Machine Chest Press: 3 sets x 12 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 12 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 12 reps\n\n' +
+
+   
+'Thursday: Walking and Mobility\n' +
+'• Treadmill Brisk Walking: 30 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Standing Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
+
+   
+'Friday: Lower Body Strength\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Seated Leg Curls: 3 sets x 12 reps\n' +
+'• Leg Extensions: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+   
+'Saturday: Light Cardio and Core\n' +
+'• Stationary Bicycle: 20 minutes\n' +
+'• Treadmill Easy Walking: 15 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Gentle Full Body Stretching: 10 minutes\n\n' +
+
+    
+'Sunday: Active Recovery and Stretching\n' +
+'• Easy Walking: 20 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Standing Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n' +
+'• Deep Breathing and Relaxation: 5 minutes'
+
   );
   return;
 }
@@ -558,28 +946,204 @@ if (fitnessProfile.fitnessGoal === 'Build Muscle') {
   return;
 }
 
-if (fitnessProfile.fitnessGoal === 'Lose Fat') {
+
+if (
+  fitnessProfile.workoutLocation === 'Home' &&
+  fitnessProfile.fitnessGoal === 'Lose Fat'
+) {
   setGeneratedPlan(
-    'Your 5-Day Fat Loss Plan:\n\n' +
-    'Monday: Full Body Strength\n' +
-    'Tuesday: Cardio and Core\n' +
-    'Wednesday: Upper Body Strength\n' +
-    'Thursday: Cardio and Mobility\n' +
-    'Friday: Lower Body Strength\n' +
+    'Your 5-Day Home Fat Loss Plan:\n\n' +
+   
+'Monday: Full Body Strength and Cardio\n' +
+'• Bodyweight Squats: 3 sets x 12 reps\n' +
+'• Resistance Band Rows: 3 sets x 12 reps\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n' +
+'• Brisk Walking: 20 minutes\n\n' +
+
+    
+'Tuesday: Cardio and Core\n' +
+'• Brisk Walking or Marching in Place: 25 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Standing Knee Raises: 3 sets x 12 reps per side\n\n' +
+
+    
+'Wednesday: Upper Body Strength\n' +
+'• Resistance Band Chest Press: 3 sets x 12 reps\n' +
+'• Resistance Band Rows: 3 sets x 12 reps\n' +
+'• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+'• Resistance Band Triceps Extensions: 3 sets x 12 reps\n' +
+'• Wall Push-Ups: 2 sets x 10 reps\n\n' +
+
+    
+'Thursday: Walking and Mobility\n' +
+'• Brisk Walking or Marching in Place: 30 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
+
+    
+'Friday: Lower Body Strength\n' +
+'• Bodyweight Squats: 3 sets x 15 reps\n' +
+'• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Bodyweight Good Mornings: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 20 reps\n\n' +
+
     'Saturday: Rest\n' +
     'Sunday: Rest'
   );
   return;
 }
 
+if (fitnessProfile.fitnessGoal === 'Lose Fat') {
+  setGeneratedPlan(
+    'Your 5-Day Fat Loss Plan:\n\n' +
+    
+'Monday: Full Body Strength\n' +
+'• Bodyweight Squats: 3 sets x 12 reps\n' +
+'• Resistance Band Rows: 3 sets x 12 reps\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n' +
+'• Brisk Walking: 15 minutes\n\n' +
+
+   
+'Tuesday: Cardio and Core\n' +
+'• Brisk Walking or Stationary Bike: 25 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Glute Bridges: 3 sets x 15 reps\n\n' +
+
+    
+'Wednesday: Upper Body Strength\n' +
+'• Machine Chest Press: 3 sets x 12 reps\n' +
+'• Lat Pulldowns: 3 sets x 12 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 12 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 12 reps\n\n' +
+
+    
+'Thursday: Cardio and Mobility\n' +
+'• Brisk Walking or Stationary Bike: 30 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
+
+    
+'Friday: Lower Body Strength\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Seated Leg Curls: 3 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Leg Extensions: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+    'Saturday: Rest\n' +
+    'Sunday: Rest'
+  );
+  return;
+}
+
+
+if (
+  fitnessProfile.workoutLocation === 'Home' &&
+  fitnessProfile.fitnessGoal === 'Maintain Weight'
+) {
+  setGeneratedPlan(
+    'Your 5-Day Home Maintenance Plan:\n\n' +
+    
+'Monday: Upper Body Strength\n' +
+'• Wall Push-Ups: 3 sets x 12 reps\n' +
+'• Resistance Band Rows: 3 sets x 12 reps\n' +
+'• Resistance Band Chest Press: 3 sets x 12 reps\n' +
+'• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+'• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+
+    
+'Tuesday: Lower Body Strength\n' +
+'• Bodyweight Squats: 3 sets x 15 reps\n' +
+'• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Bodyweight Good Mornings: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 20 reps\n\n' +
+
+   
+'Wednesday: Cardio and Core\n' +
+'• Brisk Walking or Marching in Place: 25 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Standing Knee Raises: 3 sets x 12 reps per side\n\n' +
+
+    
+'Thursday: Full Body Strength\n' +
+'• Bodyweight Squats: 3 sets x 12 reps\n' +
+'• Resistance Band Rows: 3 sets x 12 reps\n' +
+'• Wall Push-Ups: 3 sets x 10 reps\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+    
+'Friday: Walking and Mobility\n' +
+'• Brisk Walking or Marching in Place: 30 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
+
+    'Saturday: Rest\n' +
+    'Sunday: Rest'
+  );
+  return;
+}
+
+
 if (fitnessProfile.fitnessGoal === 'Maintain Weight') {
   setGeneratedPlan(
     'Your 5-Day Maintenance Plan:\n\n' +
-    'Monday: Upper Body Strength\n' +
-    'Tuesday: Lower Body Strength\n' +
-    'Wednesday: Moderate Cardio and Core\n' +
-    'Thursday: Full Body Strength\n' +
-    'Friday: Cardio and Mobility\n' +
+    
+'Monday: Upper Body Strength\n' +
+'• Machine Chest Press: 3 sets x 12 reps\n' +
+'• Lat Pulldowns: 3 sets x 12 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Dumbbell Biceps Curls: 3 sets x 12 reps\n' +
+'• Cable Triceps Pushdowns: 3 sets x 12 reps\n\n' +
+
+    
+'Tuesday: Lower Body Strength\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Seated Leg Curls: 3 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Leg Extensions: 3 sets x 12 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+    
+'Wednesday: Moderate Cardio and Core\n' +
+'• Brisk Walking or Stationary Bike: 25 minutes\n' +
+'• Dead Bugs: 3 sets x 10 reps per side\n' +
+'• Bird Dogs: 3 sets x 10 reps per side\n' +
+'• Glute Bridges: 3 sets x 15 reps\n' +
+'• Standing Knee Raises: 3 sets x 12 reps per side\n\n' +
+
+    
+'Thursday: Full Body Strength\n' +
+'• Leg Press: 3 sets x 12 reps\n' +
+'• Machine Chest Press: 3 sets x 12 reps\n' +
+'• Seated Cable Rows: 3 sets x 12 reps\n' +
+'• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+
+    
+'Friday: Cardio and Mobility\n' +
+'• Brisk Walking or Stationary Bike: 30 minutes\n' +
+'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
+'• Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
+'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
+'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
+
     'Saturday: Rest\n' +
     'Sunday: Rest'
   );
