@@ -107,7 +107,13 @@ const goal = fitnessProfile.fitnessGoal;
 const location = fitnessProfile.workoutLocation;
 
 
-if (days === 1 && goal === 'Lose Fat') {
+const workoutSets =
+  experience === 'Beginner' ? 2 :
+  experience === 'Intermediate' ? 3 :
+  4;
+
+
+if (days === 1 && goal === 'Lose Fat' && location === 'Gym') {
     setGeneratedPlan(
       'Your 1-Day Fat Loss Workout Plan:\n\n' +
       'Monday: Full Body and Cardio\n' +
@@ -120,7 +126,8 @@ if (days === 1 && goal === 'Lose Fat') {
     return;
   }
 
-if (days === 1 && goal === 'Build Muscle') {
+
+if (days === 1 && goal === 'Build Muscle' && location === 'Gym') {
   setGeneratedPlan(
     'Your 1-Day Muscle Building Plan:\n\n' +
     'Monday: Full Body Strength Training\n' +
@@ -135,18 +142,53 @@ if (days === 1 && goal === 'Build Muscle') {
 }
 
 
-if (days === 1 && goal === 'Lose Fat' && location === 'Home') {
+if (days === 1 && goal === 'Lose Fat' && location === 'Home' && experience === 'Beginner') {
   setGeneratedPlan(
     'Your 1-Day Home Fat Loss Plan:\n\n' +
     'Monday: Full Body Home Workout\n' +
     '• Marching in Place: 5 minutes\n' +
-    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+`• Bodyweight Squats: ${workoutSets} sets x 12 reps\n` +
     '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
     '• Glute Bridges: 3 sets x 12 reps\n' +
     '• Brisk Walking: 20 minutes'
   );
   return;
 }
+
+if (days === 1 && goal === 'Lose Fat' && location === 'Home' && experience === 'Intermediate') {
+  setGeneratedPlan(
+    'Your 1-Day Intermediate Home Fat Loss Plan:\n\n' +
+    'Monday: Full Body Strength and Cardio\n' +
+    '• Marching in Place: 5 minutes\n' +
+    `• Bodyweight Squats: ${workoutSets} sets x 15 reps\n` +
+    '• Reverse Lunges: 3 sets x 12 reps per leg\n' +
+    '• Resistance Band Rows: 3 sets x 15 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 12 reps per side\n' +
+    '• Brisk Walking: 25 minutes\n\n' +
+    'Tuesday - Sunday: Rest or optional light activity'
+  );
+  return;
+}
+
+if (days === 1 && goal === 'Lose Fat' && location === 'Home' && experience === 'Advanced') {
+  setGeneratedPlan(
+    'Your 1-Day Advanced Home Fat Loss Plan:\n\n' +
+    'Monday: Full Body Strength and Conditioning\n' +
+    '• Dynamic Warm-Up: 5 minutes\n' + 
+    `• Bodyweight Squats: ${workoutSets} sets x 15 reps\n` +
+    '• Reverse Lunges: 4 sets x 12 reps per leg\n' +
+    '• Resistance Band Rows: 4 sets x 15 reps\n' +
+    '• Glute Bridges: 4 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 15 reps per side\n' +
+    '• Fast Marching Intervals: 5 rounds x 1 minute\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Tuesday - Sunday: Rest or optional light activity'
+  );
+  return;
+}
+
+
 
 if (days === 1 && goal === 'Build Muscle' && location === 'Home') {
   setGeneratedPlan(
@@ -160,6 +202,20 @@ if (days === 1 && goal === 'Build Muscle' && location === 'Home') {
   );
   return;
 }
+
+if (days === 1 && goal === 'Maintain Weight' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 1-Day Home Maintenance Plan:\n\n' +
+    'Monday: Full Body Maintenance Workout\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n' +
+    '• Brisk Walking: 20 minutes'
+  );
+  return;
+}
+
 
 if (days === 1) {
   setGeneratedPlan(
@@ -213,6 +269,64 @@ if (days === 2 && goal === 'Build Muscle') {
   return;
 }
 
+
+if (days === 2 && goal === 'Lose Fat' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 2-Day Home Fat Loss Plan:\n\n' +
+    'Monday: Full Body and Cardio\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Thursday: Full Body and Core\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Other Days: Rest or optional light walking'
+  );
+  return;
+}
+
+if (days === 2 && goal === 'Build Muscle' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 2-Day Home Muscle Building Plan:\n\n' +
+    'Monday: Full Body Strength A\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n\n' +
+    'Thursday: Full Body Strength B\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Resistance Band Shoulder Press: 3 sets x 10 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Other Days: Rest and muscle recovery'
+  );
+  return;
+}
+
+if (days === 2 && goal === 'Maintain Weight' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 2-Day Home Maintenance Plan:\n\n' +
+    'Monday: Full Body Maintenance A\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Thursday: Full Body Maintenance B\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Other Days: Rest or optional light activity'
+  );
+  return;
+}
 
 
 if (days === 2) {
@@ -402,6 +516,125 @@ if (days === 6 && goal === 'Maintain Weight') {
   );
   return;
 }
+
+if (days === 6 && goal === 'Lose Fat' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 6-Day Home Fat Loss Plan:\n\n' +
+    'Monday: Full Body Strength\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Tuesday: Cardio and Core\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n\n' +
+    'Wednesday: Lower Body Strength\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n\n' +
+    'Thursday: Light Cardio and Mobility\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Gentle Full Body Stretching: 10 minutes\n\n' +
+    'Friday: Upper Body and Core\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n\n' +
+    'Saturday: Full Body and Cardio\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Sunday: Rest and recovery'
+  );
+  return;
+}
+
+if (days === 6 && goal === 'Build Muscle' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 6-Day Home Muscle Building Plan:\n\n' +
+    'Monday: Upper Body A\n' +
+    '• Wall Push-Ups: 3 sets x 12 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+    'Tuesday: Lower Body A\n' +
+    '• Bodyweight Squats: 3 sets x 15 reps\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Wednesday: Core and Active Recovery\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Bird Dogs: 3 sets x 10 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n' +
+    '• Gentle Stretching: 10 minutes\n\n' +
+    'Thursday: Upper Body B\n' +
+    '• Incline Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+    'Friday: Lower Body B\n' +
+    '• Step-Ups: 3 sets x 10 reps per leg\n' +
+    '• Bodyweight Squats: 3 sets x 15 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Saturday: Core and Mobility\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Bird Dogs: 3 sets x 10 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n' +
+    '• Gentle Full Body Stretching: 10 minutes\n\n' +
+    'Sunday: Rest and muscle recovery'
+  );
+  return;
+}
+
+
+if (days === 6 && goal === 'Maintain Weight' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 6-Day Home Maintenance Plan:\n\n' +
+    'Monday: Upper Body Strength\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 2 sets x 12 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Tuesday: Lower Body Strength\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Wednesday: Cardio and Core\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Gentle Stretching: 10 minutes\n\n' +
+    'Thursday: Full Body Maintenance\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n\n' +
+    'Friday: Cardio and Mobility\n' +
+    '• Brisk Walking: 30 minutes\n' +
+    '• Bird Dogs: 3 sets x 10 reps per side\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Gentle Full Body Stretching: 10 minutes\n\n' +
+    'Saturday: Light Full Body and Core\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 2 sets x 12 reps\n' +
+    '• Glute Bridges: 2 sets x 12 reps\n' +
+    '• Dead Bugs: 2 sets x 10 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Sunday: Rest and recovery'
+  );
+  return;
+}
+
 
 if (days === 6) {
   setGeneratedPlan(
@@ -606,6 +839,134 @@ if (days === 7 && goal === 'Maintain Weight') {
   return;
 }
 
+
+if (days === 7 && goal === 'Lose Fat' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 7-Day Home Fat Loss Plan:\n\n' +
+    'Monday: Full Body Strength\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Tuesday: Cardio and Core\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n\n' +
+    'Wednesday: Lower Body Strength\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n\n' +
+    'Thursday: Light Cardio and Mobility\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Gentle Full Body Stretching: 10 minutes\n\n' +
+    'Friday: Upper Body and Core\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n\n' +
+    'Saturday: Full Body and Cardio\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Sunday: Active Recovery\n' +
+    '• Easy Walking: 20 minutes\n' +
+    '• Gentle Stretching: 10 minutes\n' +
+    '• Focus on rest and recovery'
+  );
+  return;
+}
+
+if (days === 7 && goal === 'Build Muscle' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 7-Day Home Muscle Building Plan:\n\n' +
+    'Monday: Upper Body A\n' +
+    '• Wall Push-Ups: 3 sets x 12 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+    'Tuesday: Lower Body A\n' +
+    '• Bodyweight Squats: 3 sets x 15 reps\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Wednesday: Core and Mobility\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Bird Dogs: 3 sets x 10 reps per side\n' +
+    '• Easy Walking: 20 minutes\n' +
+    '• Gentle Stretching: 10 minutes\n\n' +
+    'Thursday: Upper Body B\n' +
+    '• Incline Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+    'Friday: Lower Body B\n' +
+    '• Step-Ups: 3 sets x 10 reps per leg\n' +
+    '• Bodyweight Squats: 3 sets x 15 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Saturday: Light Cardio and Core\n' +
+    '• Brisk Walking: 20 minutes\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Bird Dogs: 3 sets x 10 reps per side\n' +
+    '• Gentle Stretching: 10 minutes\n\n' +
+    'Sunday: Active Recovery\n' +
+    '• Easy Walking: 20 minutes\n' +
+    '• Gentle Stretching: 10 minutes\n' +
+    '• Focus on rest and muscle recovery'
+  );
+  return;
+}
+
+if (days === 7 && goal === 'Maintain Weight' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 7-Day Home Maintenance Plan:\n\n' +
+    'Monday: Upper Body Strength\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 2 sets x 12 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Tuesday: Lower Body Strength\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Wednesday: Cardio and Core\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Gentle Stretching: 10 minutes\n\n' +
+    'Thursday: Full Body Maintenance\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n\n' +
+    'Friday: Cardio and Mobility\n' +
+    '• Brisk Walking: 30 minutes\n' +
+    '• Bird Dogs: 3 sets x 10 reps per side\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Gentle Full Body Stretching: 10 minutes\n\n' +
+    'Saturday: Light Full Body and Core\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 2 sets x 12 reps\n' +
+    '• Glute Bridges: 2 sets x 12 reps\n' +
+    '• Dead Bugs: 2 sets x 10 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Sunday: Active Recovery\n' +
+    '• Easy Walking: 20 minutes\n' +
+    '• Gentle Stretching: 10 minutes\n' +
+    '• Focus on rest and recovery'
+  );
+  return;
+}
+
+
 if (days === 7) {
   setGeneratedPlan(
     'Your 7-Day Fitness Plan:\n\n' +
@@ -666,7 +1027,84 @@ if (days === 3 && goal === 'Build Muscle') {
   return;
 }
 
+if (days === 3 && goal === 'Lose Fat' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 3-Day Home Fat Loss Plan:\n\n' +
+    'Monday: Full Body and Cardio\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Wednesday: Lower Body and Core\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Friday: Full Body and Cardio\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Other Days: Rest or optional light walking'
+  );
+  return;
+}
+
  
+if (days === 3 && goal === 'Build Muscle' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 3-Day Home Muscle Building Plan:\n\n' +
+    'Monday: Full Body Strength A\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n\n' +
+    'Wednesday: Full Body Strength B\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Resistance Band Chest Press: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Friday: Full Body Strength C\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n\n' +
+    'Other Days: Rest and muscle recovery'
+  );
+  return;
+}
+
+
+if (days === 3 && goal === 'Maintain Weight' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 3-Day Home Maintenance Plan:\n\n' +
+    'Monday: Full Body Maintenance A\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Wednesday: Lower Body and Core\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Friday: Full Body Maintenance B\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Other Days: Rest or optional light activity'
+  );
+  return;
+}
+
+
 if (days === 3) {
   setGeneratedPlan(
     'Your 3-Day Workout Schedule:\n\n' +
@@ -733,6 +1171,97 @@ if (days === 4 && goal === 'Build Muscle') {
 }
 
 
+if (days === 4 && goal === 'Lose Fat' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 4-Day Home Fat Loss Plan:\n\n' +
+    'Monday: Full Body and Cardio\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Tuesday: Lower Body and Core\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Thursday: Upper Body and Cardio\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Saturday: Full Body and Core\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Other Days: Rest or optional light walking'
+  );
+  return;
+}
+
+if (days === 4 && goal === 'Build Muscle' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 4-Day Home Muscle Building Plan:\n\n' +
+    'Monday: Upper Body A\n' +
+    '• Wall Push-Ups: 3 sets x 12 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+    'Tuesday: Lower Body A\n' +
+    '• Bodyweight Squats: 3 sets x 15 reps\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Thursday: Upper Body B\n' +
+    '• Incline Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+    'Saturday: Lower Body B\n' +
+    '• Bodyweight Squats: 3 sets x 15 reps\n' +
+    '• Step-Ups: 3 sets x 10 reps per leg\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n\n' +
+    'Other Days: Rest and muscle recovery'
+  );
+  return;
+}
+
+if (days === 4 && goal === 'Maintain Weight' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 4-Day Home Maintenance Plan:\n\n' +
+    'Monday: Upper Body and Cardio\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 2 sets x 12 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Tuesday: Lower Body and Core\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n\n' +
+    'Thursday: Full Body Maintenance\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Saturday: Cardio and Core\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n\n' +
+    'Other Days: Rest or optional light activity'
+  );
+  return;
+}
+
+
    if (days === 4) {
     setGeneratedPlan(
       'Your 4-Day Workout Schedule:\n\n' +
@@ -744,6 +1273,108 @@ if (days === 4 && goal === 'Build Muscle') {
     return;
   }
   
+if (days === 5 && goal === 'Lose Fat' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 5-Day Home Fat Loss Plan:\n\n' +
+    'Monday: Full Body Strength\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Tuesday: Cardio and Core\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n\n' +
+    'Wednesday: Lower Body Strength\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Glute Bridges: 3 sets x 12 reps\n\n' +
+    'Thursday: Light Cardio and Mobility\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Gentle Full Body Stretching: 10 minutes\n\n' +
+    'Friday: Full Body and Cardio\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Brisk Walking: 20 minutes\n\n' +
+    'Saturday - Sunday: Rest or optional light walking'
+  );
+  return;
+}
+
+if (days === 5 && goal === 'Build Muscle' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 5-Day Home Muscle Building Plan:\n\n' +
+    'Monday: Upper Body A\n' +
+    '• Wall Push-Ups: 3 sets x 12 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+    'Tuesday: Lower Body A\n' +
+    '• Bodyweight Squats: 3 sets x 15 reps\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Wednesday: Core and Active Recovery\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Bird Dogs: 3 sets x 10 reps per side\n' +
+    '• Brisk Walking: 20 minutes\n' +
+    '• Gentle Full Body Stretching: 10 minutes\n\n' +
+    'Thursday: Upper Body B\n' +
+    '• Incline Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
+    '• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+    'Friday: Lower Body B\n' +
+    '• Step-Ups: 3 sets x 10 reps per leg\n' +
+    '• Bodyweight Squats: 3 sets x 15 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Saturday - Sunday: Rest and muscle recovery'
+  );
+  return;
+}
+
+if (days === 5 && goal === 'Maintain Weight' && location === 'Home') {
+  setGeneratedPlan(
+    'Your 5-Day Home Maintenance Plan:\n\n' +
+    'Monday: Upper Body Strength\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Resistance Band Biceps Curls: 2 sets x 12 reps\n' +
+    '• Brisk Walking: 15 minutes\n\n' +
+    'Tuesday: Lower Body Strength\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Reverse Lunges: 3 sets x 10 reps per leg\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Wednesday: Cardio and Core\n' +
+    '• Brisk Walking: 25 minutes\n' +
+    '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Gentle Stretching: 10 minutes\n\n' +
+    'Thursday: Full Body Maintenance\n' +
+    '• Marching in Place: 5 minutes\n' +
+    '• Bodyweight Squats: 3 sets x 12 reps\n' +
+    '• Wall Push-Ups: 3 sets x 10 reps\n' +
+    '• Resistance Band Rows: 3 sets x 12 reps\n' +
+    '• Glute Bridges: 3 sets x 15 reps\n\n' +
+    'Friday: Cardio and Mobility\n' +
+    '• Brisk Walking: 30 minutes\n' +
+    '• Bird Dogs: 3 sets x 10 reps per side\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Gentle Full Body Stretching: 10 minutes\n\n' +
+    'Saturday - Sunday: Rest or optional light walking'
+  );
+  return;
+}
+
+
 if (days === 5) {
 
   
