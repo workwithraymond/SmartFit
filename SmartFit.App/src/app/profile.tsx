@@ -93,6 +93,25 @@ if (activityLevel === '') {
   return true;
 };
 
+const formatExercise = (
+  exerciseName: string,
+  sets: number,
+  reps: number
+) => {
+  return `• ${exerciseName}: ${sets} sets x ${reps} reps\n`;
+};
+
+const createSquatExercise = (experienceLevel: string) => {
+  const sets =
+    experienceLevel === 'Beginner' ? 2 :
+    experienceLevel === 'Intermediate' ? 3 :
+    4;
+
+  const reps =
+    experienceLevel === 'Beginner' ? 12 : 15;
+
+  return formatExercise('Bodyweight Squats', sets, reps);
+};
 
 const generateWorkoutPlan = () => {
   
@@ -107,10 +126,6 @@ const goal = fitnessProfile.fitnessGoal;
 const location = fitnessProfile.workoutLocation;
 
 
-const workoutSets =
-  experience === 'Beginner' ? 2 :
-  experience === 'Intermediate' ? 3 :
-  4;
 
 
 if (days === 1 && goal === 'Lose Fat' && location === 'Gym') {
@@ -147,7 +162,13 @@ if (days === 1 && goal === 'Lose Fat' && location === 'Home' && experience === '
     'Your 1-Day Home Fat Loss Plan:\n\n' +
     'Monday: Full Body Home Workout\n' +
     '• Marching in Place: 5 minutes\n' +
-`• Bodyweight Squats: ${workoutSets} sets x 12 reps\n` +
+
+
+
+createSquatExercise(experience) +
+
+
+
     '• Standing Knee Raises: 3 sets x 15 reps per side\n' +
     '• Glute Bridges: 3 sets x 12 reps\n' +
     '• Brisk Walking: 20 minutes'
@@ -160,7 +181,13 @@ if (days === 1 && goal === 'Lose Fat' && location === 'Home' && experience === '
     'Your 1-Day Intermediate Home Fat Loss Plan:\n\n' +
     'Monday: Full Body Strength and Cardio\n' +
     '• Marching in Place: 5 minutes\n' +
-    `• Bodyweight Squats: ${workoutSets} sets x 15 reps\n` +
+    
+
+
+createSquatExercise(experience) +
+
+
+
     '• Reverse Lunges: 3 sets x 12 reps per leg\n' +
     '• Resistance Band Rows: 3 sets x 15 reps\n' +
     '• Glute Bridges: 3 sets x 15 reps\n' +
@@ -176,7 +203,13 @@ if (days === 1 && goal === 'Lose Fat' && location === 'Home' && experience === '
     'Your 1-Day Advanced Home Fat Loss Plan:\n\n' +
     'Monday: Full Body Strength and Conditioning\n' +
     '• Dynamic Warm-Up: 5 minutes\n' + 
-    `• Bodyweight Squats: ${workoutSets} sets x 15 reps\n` +
+    
+
+
+createSquatExercise(experience) +
+
+
+
     '• Reverse Lunges: 4 sets x 12 reps per leg\n' +
     '• Resistance Band Rows: 4 sets x 15 reps\n' +
     '• Glute Bridges: 4 sets x 15 reps\n' +
@@ -231,7 +264,9 @@ if (days === 1) {
 }
 
 
-if (days === 2 && goal === 'Lose Fat') {
+
+if (days === 2 && goal === 'Lose Fat' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 2-Day Fat Loss Workout Plan:\n\n' +
     'Monday: Full Body Strength and Cardio\n' +
@@ -249,7 +284,9 @@ if (days === 2 && goal === 'Lose Fat') {
   return;
 }
 
-if (days === 2 && goal === 'Build Muscle') {
+
+if (days === 2 && goal === 'Build Muscle' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 2-Day Muscle Building Plan:\n\n' +
     'Monday: Full Body Strength Workout A\n' +
@@ -982,7 +1019,9 @@ if (days === 7) {
 }
 
  
-if (days === 3 && goal === 'Lose Fat') {
+
+if (days === 3 && goal === 'Lose Fat' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 3-Day Fat Loss Workout Plan:\n\n' +
     'Monday: Full Body Strength and Cardio\n' +
@@ -1004,7 +1043,9 @@ if (days === 3 && goal === 'Lose Fat') {
   return;
 }
 
-if (days === 3 && goal === 'Build Muscle') {
+
+if (days === 3 && goal === 'Build Muscle' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 3-Day Muscle Building Plan:\n\n' +
     'Monday: Full Body Strength Workout A\n' +
@@ -1116,7 +1157,9 @@ if (days === 3) {
 return;
 }
 
-if (days === 4 && goal === 'Lose Fat') {
+
+if (days === 4 && goal === 'Lose Fat' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 4-Day Fat Loss Workout Plan:\n\n' +
     'Monday: Full Body Strength A\n' +
@@ -1142,7 +1185,9 @@ if (days === 4 && goal === 'Lose Fat') {
   return;
 }
 
-if (days === 4 && goal === 'Build Muscle') {
+
+if (days === 4 && goal === 'Build Muscle' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 4-Day Muscle Building Workout Plan:\n\n' +
     'Monday: Upper Body A\n' +
