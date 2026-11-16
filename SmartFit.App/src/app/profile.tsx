@@ -250,6 +250,21 @@ if (days === 1 && goal === 'Maintain Weight' && location === 'Home') {
 }
 
 
+
+if (days === 1 && goal === 'Maintain Weight' && location === 'Gym') {
+  setGeneratedPlan(
+    'Your 1-Day Gym Maintenance Plan:\n\n' +
+    'Monday: Full Body Strength and Cardio\n' +
+    '• Leg Press: 3 sets x 12 reps\n' +
+    '• Seated Cable Rows: 3 sets x 12 reps\n' +
+    '• Machine Chest Press: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n' +
+    '• Treadmill Brisk Walking: 20 minutes\n\n' +
+    'Tuesday - Sunday: Rest or optional light activity'
+  );
+  return;
+}
+
 if (days === 1) {
   setGeneratedPlan(
     'Your 1-Day Full Body Workout Plan:\n\n' +
@@ -262,6 +277,7 @@ if (days === 1) {
   );
   return;
 }
+
 
 
 
@@ -366,6 +382,26 @@ if (days === 2 && goal === 'Maintain Weight' && location === 'Home') {
 }
 
 
+
+if (days === 2 && goal === 'Maintain Weight' && location === 'Gym') {
+  setGeneratedPlan(
+    'Your 2-Day Gym Maintenance Plan:\n\n' +
+    'Monday: Full Body Strength A\n' +
+    '• Leg Press: 3 sets x 12 reps\n' +
+    '• Seated Cable Rows: 3 sets x 12 reps\n' +
+    '• Machine Chest Press: 3 sets x 12 reps\n' +
+    '• Treadmill Brisk Walking: 15 minutes\n\n' +
+    'Thursday: Full Body Strength B\n' +
+    '• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+    '• Lat Pulldowns: 3 sets x 12 reps\n' +
+    '• Leg Extensions: 3 sets x 12 reps\n' +
+    '• Stationary Bicycle: 15 minutes\n\n' +
+    'Other Days: Rest or optional light activity'
+  );
+  return;
+}
+
+
 if (days === 2) {
   setGeneratedPlan(
     'Your 2-Day Full Body Workout Plan:\n\n' +
@@ -385,7 +421,9 @@ if (days === 2) {
 }
 
 
-if (days === 6 && goal === 'Lose Fat') {
+
+if (days === 6 && goal === 'Lose Fat' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 6-Day Fat Loss Plan:\n\n' +
    
@@ -441,7 +479,9 @@ if (days === 6 && goal === 'Lose Fat') {
   return;
 }
 
-if (days === 6 && goal === 'Build Muscle') {
+
+if (days === 6 && goal === 'Build Muscle' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 6-Day Muscle Building Plan:\n\n' +
     
@@ -498,7 +538,9 @@ if (days === 6 && goal === 'Build Muscle') {
 }
 
 
-if (days === 6 && goal === 'Maintain Weight') {
+
+if (days === 6 && goal === 'Maintain Weight' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 6-Day Maintenance Plan:\n\n' +
     
@@ -687,7 +729,9 @@ if (days === 6) {
   return;
 }
 
-if (days === 7 && goal === 'Lose Fat') {
+
+if (days === 7 && goal === 'Lose Fat' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 7-Day Fat Loss Plan:\n\n' +
    
@@ -750,7 +794,9 @@ if (days === 7 && goal === 'Lose Fat') {
   return;
 }
 
-if (days === 7 && goal === 'Build Muscle') {
+
+if (days === 7 && goal === 'Build Muscle' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 7-Day Muscle Building Plan:\n\n' +
    
@@ -813,7 +859,9 @@ if (days === 7 && goal === 'Build Muscle') {
   return;
 }
 
-if (days === 7 && goal === 'Maintain Weight') {
+
+if (days === 7 && goal === 'Maintain Weight' && location === 'Gym') {
+
   setGeneratedPlan(
     'Your 7-Day Maintenance Plan:\n\n' +
     
@@ -1146,6 +1194,29 @@ if (days === 3 && goal === 'Maintain Weight' && location === 'Home') {
 }
 
 
+if (days === 3 && goal === 'Maintain Weight' && location === 'Gym') {
+  setGeneratedPlan(
+    'Your 3-Day Gym Maintenance Plan:\n\n' +
+    'Monday: Full Body Strength A\n' +
+    '• Leg Press: 3 sets x 12 reps\n' +
+    '• Seated Cable Rows: 3 sets x 12 reps\n' +
+    '• Machine Chest Press: 3 sets x 12 reps\n' +
+    '• Treadmill Brisk Walking: 15 minutes\n\n' +
+    'Wednesday: Cardio and Core\n' +
+    '• Stationary Bicycle: 20 minutes\n' +
+    '• Treadmill Brisk Walking: 15 minutes\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Bird Dogs: 3 sets x 10 reps per side\n\n' +
+    'Friday: Full Body Strength B\n' +
+    '• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+    '• Lat Pulldowns: 3 sets x 12 reps\n' +
+    '• Leg Extensions: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Other Days: Rest or optional light activity'
+  );
+  return;
+}
+
 if (days === 3) {
   setGeneratedPlan(
     'Your 3-Day Workout Schedule:\n\n' +
@@ -1306,6 +1377,34 @@ if (days === 4 && goal === 'Maintain Weight' && location === 'Home') {
   return;
 }
 
+
+if (days === 4 && goal === 'Maintain Weight' && location === 'Gym') {
+  setGeneratedPlan(
+    'Your 4-Day Gym Maintenance Plan:\n\n' +
+    'Monday: Upper Body Strength\n' +
+    '• Machine Chest Press: 3 sets x 12 reps\n' +
+    '• Seated Cable Rows: 3 sets x 12 reps\n' +
+    '• Lat Pulldowns: 3 sets x 12 reps\n' +
+    '• Dumbbell Biceps Curls: 3 sets x 12 reps\n\n' +
+    'Tuesday: Lower Body Strength\n' +
+    '• Leg Press: 3 sets x 12 reps\n' +
+    '• Seated Leg Curls: 3 sets x 12 reps\n' +
+    '• Leg Extensions: 3 sets x 12 reps\n' +
+    '• Standing Calf Raises: 3 sets x 15 reps\n\n' +
+    'Thursday: Upper Body and Cardio\n' +
+    '• Machine Chest Press: 3 sets x 12 reps\n' +
+    '• Seated Cable Rows: 3 sets x 12 reps\n' +
+    '• Cable Triceps Pushdowns: 3 sets x 12 reps\n' +
+    '• Treadmill Brisk Walking: 20 minutes\n\n' +
+    'Friday: Lower Body and Core\n' +
+    '• Dumbbell Romanian Deadlifts: 3 sets x 10 reps\n' +
+    '• Leg Press: 3 sets x 12 reps\n' +
+    '• Dead Bugs: 3 sets x 10 reps per side\n' +
+    '• Stationary Bicycle: 20 minutes\n\n' +
+    'Wednesday, Saturday, Sunday: Rest or optional light activity'
+  );
+  return;
+}
 
    if (days === 4) {
     setGeneratedPlan(
@@ -1528,56 +1627,8 @@ if (
   return;
 }
 
-if (location === 'Home' && fitnessProfile.fitnessGoal === 'Build Muscle') {
-  setGeneratedPlan(
-    'Your 5-Day Home Muscle Building Plan:\n\n' +
+if (fitnessProfile.fitnessGoal === 'Build Muscle' && location === 'Gym') {
 
-    
-    
-'Monday: Upper Body\n' +
-'• Push-Ups: 3 sets x 10 reps\n' +
-'• Pike Push-Ups: 3 sets x 8 reps\n' +
-'• Resistance Band Rows: 3 sets x 12 reps\n' +
-'• Chair-Supported Triceps Extensions: 3 sets x 10 reps\n\n' +
-
-    
-'Tuesday: Lower Body\n' +
-'• Bodyweight Squats: 3 sets x 15 reps\n' +
-'• Reverse Lunges: 3 sets x 10 reps per leg\n' +
-'• Glute Bridges: 3 sets x 15 reps\n' +
-'• Standing Calf Raises: 3 sets x 20 reps\n\n' +
-
-    
-'Wednesday: Core and Mobility\n' +
-'• Plank: 3 sets x 30 seconds\n' +
-'• Dead Bugs: 3 sets x 10 reps per side\n' +
-'• Bird Dogs: 3 sets x 10 reps per side\n' +
-'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
-'• Hip Flexor Stretch: 2 sets x 30 seconds per side\n\n' +
-
-    
-'Thursday: Upper Body\n' +
-'• Incline Push-Ups: 3 sets x 12 reps\n' +
-'• Resistance Band Rows: 3 sets x 12 reps\n' +
-'• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
-'• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
-
-    
-'Friday: Lower Body\n' +
-'• Bulgarian Split Squats: 3 sets x 10 reps per leg\n' +
-'• Single-Leg Glute Bridges: 3 sets x 12 reps per leg\n' +
-'• Bodyweight Good Mornings: 3 sets x 15 reps\n' +
-'• Wall Sit: 3 sets x 30 seconds\n' +
-'• Single-Leg Calf Raises: 3 sets x 12 reps per leg\n\n' +
-
-    'Saturday: Rest\n' +
-    'Sunday: Rest'
-  );
-  return;
-}
-
-
-if (fitnessProfile.fitnessGoal === 'Build Muscle') {
   setGeneratedPlan(
     'Your 5-Day Muscle Building Plan:\n\n' +
     
@@ -1623,59 +1674,8 @@ if (fitnessProfile.fitnessGoal === 'Build Muscle') {
 }
 
 
-if (
-  fitnessProfile.workoutLocation === 'Home' &&
-  fitnessProfile.fitnessGoal === 'Lose Fat'
-) {
-  setGeneratedPlan(
-    'Your 5-Day Home Fat Loss Plan:\n\n' +
-   
-'Monday: Full Body Strength and Cardio\n' +
-'• Bodyweight Squats: 3 sets x 12 reps\n' +
-'• Resistance Band Rows: 3 sets x 12 reps\n' +
-'• Glute Bridges: 3 sets x 15 reps\n' +
-'• Standing Calf Raises: 3 sets x 15 reps\n' +
-'• Brisk Walking: 20 minutes\n\n' +
+if (fitnessProfile.fitnessGoal === 'Lose Fat' && location === 'Gym') {
 
-    
-'Tuesday: Cardio and Core\n' +
-'• Brisk Walking or Marching in Place: 25 minutes\n' +
-'• Dead Bugs: 3 sets x 10 reps per side\n' +
-'• Bird Dogs: 3 sets x 10 reps per side\n' +
-'• Glute Bridges: 3 sets x 15 reps\n' +
-'• Standing Knee Raises: 3 sets x 12 reps per side\n\n' +
-
-    
-'Wednesday: Upper Body Strength\n' +
-'• Resistance Band Chest Press: 3 sets x 12 reps\n' +
-'• Resistance Band Rows: 3 sets x 12 reps\n' +
-'• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
-'• Resistance Band Triceps Extensions: 3 sets x 12 reps\n' +
-'• Wall Push-Ups: 2 sets x 10 reps\n\n' +
-
-    
-'Thursday: Walking and Mobility\n' +
-'• Brisk Walking or Marching in Place: 30 minutes\n' +
-'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
-'• Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
-'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
-'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
-
-    
-'Friday: Lower Body Strength\n' +
-'• Bodyweight Squats: 3 sets x 15 reps\n' +
-'• Reverse Lunges: 3 sets x 10 reps per leg\n' +
-'• Glute Bridges: 3 sets x 15 reps\n' +
-'• Bodyweight Good Mornings: 3 sets x 12 reps\n' +
-'• Standing Calf Raises: 3 sets x 20 reps\n\n' +
-
-    'Saturday: Rest\n' +
-    'Sunday: Rest'
-  );
-  return;
-}
-
-if (fitnessProfile.fitnessGoal === 'Lose Fat') {
   setGeneratedPlan(
     'Your 5-Day Fat Loss Plan:\n\n' +
     
@@ -1724,60 +1724,8 @@ if (fitnessProfile.fitnessGoal === 'Lose Fat') {
 }
 
 
-if (
-  fitnessProfile.workoutLocation === 'Home' &&
-  fitnessProfile.fitnessGoal === 'Maintain Weight'
-) {
-  setGeneratedPlan(
-    'Your 5-Day Home Maintenance Plan:\n\n' +
-    
-'Monday: Upper Body Strength\n' +
-'• Wall Push-Ups: 3 sets x 12 reps\n' +
-'• Resistance Band Rows: 3 sets x 12 reps\n' +
-'• Resistance Band Chest Press: 3 sets x 12 reps\n' +
-'• Resistance Band Biceps Curls: 3 sets x 12 reps\n' +
-'• Resistance Band Triceps Extensions: 3 sets x 12 reps\n\n' +
+if (fitnessProfile.fitnessGoal === 'Maintain Weight' && location === 'Gym') {
 
-    
-'Tuesday: Lower Body Strength\n' +
-'• Bodyweight Squats: 3 sets x 15 reps\n' +
-'• Reverse Lunges: 3 sets x 10 reps per leg\n' +
-'• Glute Bridges: 3 sets x 15 reps\n' +
-'• Bodyweight Good Mornings: 3 sets x 12 reps\n' +
-'• Standing Calf Raises: 3 sets x 20 reps\n\n' +
-
-   
-'Wednesday: Cardio and Core\n' +
-'• Brisk Walking or Marching in Place: 25 minutes\n' +
-'• Dead Bugs: 3 sets x 10 reps per side\n' +
-'• Bird Dogs: 3 sets x 10 reps per side\n' +
-'• Glute Bridges: 3 sets x 15 reps\n' +
-'• Standing Knee Raises: 3 sets x 12 reps per side\n\n' +
-
-    
-'Thursday: Full Body Strength\n' +
-'• Bodyweight Squats: 3 sets x 12 reps\n' +
-'• Resistance Band Rows: 3 sets x 12 reps\n' +
-'• Wall Push-Ups: 3 sets x 10 reps\n' +
-'• Glute Bridges: 3 sets x 15 reps\n' +
-'• Standing Calf Raises: 3 sets x 15 reps\n\n' +
-
-    
-'Friday: Walking and Mobility\n' +
-'• Brisk Walking or Marching in Place: 30 minutes\n' +
-'• Cat-Cow Stretch: 2 sets x 10 reps\n' +
-'• Hip Flexor Stretch: 2 sets x 30 seconds per side\n' +
-'• Standing Quadriceps Stretch: 2 sets x 30 seconds per leg\n' +
-'• Gentle Hamstring Stretch: 2 sets x 30 seconds per leg\n\n' +
-
-    'Saturday: Rest\n' +
-    'Sunday: Rest'
-  );
-  return;
-}
-
-
-if (fitnessProfile.fitnessGoal === 'Maintain Weight') {
   setGeneratedPlan(
     'Your 5-Day Maintenance Plan:\n\n' +
     
